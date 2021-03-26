@@ -1,5 +1,8 @@
 package org.lecture.animal;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class DogDriver {
 
     public static void main(String[] args) {
@@ -10,18 +13,28 @@ public class DogDriver {
                 .withBreed(Breed.AMSTAFF)
                 .build();
 
-        Dog anotherDog = new Dog.DogBuilder()
+        Dog dog =  new Dog.DogBuilder()
                 .withName("Rocky")
-                .withAge(3)
+                .withAge(2)
                 .withBreed(Breed.AMSTAFF)
-                .withBarfed(true)
                 .build();
 
-        System.out.println(dogWithBuilder.equals(anotherDog));
-        System.out.println(dogWithBuilder);
-        System.out.println(anotherDog);
-    }
+        Animal animal = dog;
 
+        log.debug(String.valueOf(dogWithBuilder.getBreed().getAvgYears()));
+        log.debug(dogWithBuilder.getBreed().getStandardColour());
+
+        log.info(dogWithBuilder.getName());
+        log.info(dogWithBuilder.toString());
+
+        if (dog instanceof  Animal) {
+            log.info("IS instance of");
+        }
+
+
+
+
+    }
 
 
 }

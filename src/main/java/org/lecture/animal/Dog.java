@@ -24,7 +24,6 @@ public class Dog extends Animal {
     private final List<String> owners;
 
     private final boolean barfed;
-    ;
     private final String sound;
     private final String walk;
 
@@ -129,7 +128,6 @@ public class Dog extends Animal {
          * @return a Dog
          */
         public Dog build() {
-
             //set default values
             if (sound == null) {
                 this.sound = "Ruff Ruff";
