@@ -1,8 +1,10 @@
 package org.lecture.carpark;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString(callSuper = true)
 public class Car extends Vehicle {
 
     private final boolean fourWheelDrive;
